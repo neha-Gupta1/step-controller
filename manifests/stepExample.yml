@@ -1,0 +1,7 @@
+apiVersion:  nehagupta.dev/v1alpha1
+kind: Step
+metadata: 
+  name: step-0
+spec:
+  name: "pod-for-cr"
+  command: "echo YAY"
