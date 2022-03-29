@@ -32,6 +32,7 @@ func main() {
 		config, err = rest.InClusterConfig()
 		if err != nil {
 			log.Printf("error %s building inclusterconfig", err.Error())
+			return
 		}
 	}
 

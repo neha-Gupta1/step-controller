@@ -7,13 +7,19 @@ import (
 // +genclient
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:deepcopy-gen=true
+// +kubebuilder:subresource:status
 
 // Step ...
 type Step struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 
-	Spec StepSpec `json:"spec"`
+	Spec   StepSpec   `json:"spec"`
+	Status StepStatus `json:"status"`
+}
+
+type StepStatus struct {
+	Progress string `json:"status"`
 }
 
 type StepSpec struct {

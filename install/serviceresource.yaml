@@ -1,0 +1,35 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: step-cr
+rules:
+- apiGroups:
+  - nehagupta.dev
+  resources:
+  - steps
+  verbs:
+  - list
+  - watch
+  - get 
+- apiGroups:
+  - v1
+  resources:
+  - pods
+  verbs:
+  - list
+  - watch
+  - get 
+  - create
+# rules:
+# - apiGroups:
+#   - '*'
+#   resources:
+#   - '*'
+#   verbs:
+#   - '*'
+# - nonResourceURLs:
+#   - '*'
+#   verbs:
+#   - '*'
+

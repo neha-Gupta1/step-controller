@@ -141,8 +141,8 @@ func newPodForCR(cr *v1alpha1.Step) *corev1.Pod {
 		Spec: corev1.PodSpec{
 			Containers: []corev1.Container{
 				{
-					Name:    "nginx-fromcr",
-					Image:   "nginx:latest",
+					Name:    "ubuntu-fromcr",
+					Image:   "ubuntu:20.04",
 					Command: strings.Split(cr.Spec.Command, " "),
 				},
 			},

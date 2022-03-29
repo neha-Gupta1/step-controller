@@ -42,11 +42,21 @@ spec:
               schedule:
                 type: string
             type: object
+          status:
+            properties:
+              status:
+                type: string
+            required:
+            - status
+            type: object
         required:
         - spec
+        - status
         type: object
     served: true
     storage: true
+    subresources:
+      status: {}
 status:
   acceptedNames:
     kind: ""

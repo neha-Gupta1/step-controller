@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: step-controller
+  name: step-controller
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: step-controller
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: step-controller
+    spec:
+      containers:
+      - image: neha16/library:0.3.0
+        name: step-control
+        resources: {}
+      serviceAccountName: step-sa
+status: {}
